@@ -10,10 +10,15 @@ namespace TvDinner.Data
     public class Location
     {
         [Key]
+        [Required]
         public int LocationID { get; set; }
+        [Required]
         public string Continent { get; set; }
+        [Required]
         public string Country { get; set;}
+        [Required]
         public string State_Territory { get; set; }
+        [Required]
         public string City { get; set; }
     } 
 }
