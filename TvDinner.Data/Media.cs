@@ -50,6 +50,14 @@ namespace TvDinner.Data
         [Required]
         public string SceneOfFood { get; set; }
 
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
+
+        // Foreign Keys
+
         [ForeignKey(nameof(Recipe))]
         public int RecipeId { get; set; }
 
@@ -59,10 +67,7 @@ namespace TvDinner.Data
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
 
-        [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
-
-        public DateTimeOffset? ModifiedUtc { get; set; }
+        
 
 
     }
