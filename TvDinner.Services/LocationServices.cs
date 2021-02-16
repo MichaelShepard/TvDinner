@@ -37,14 +37,14 @@ namespace TvDinner.Services
 
             }
 
-            public IEnumerable<LocationList> GetLocation()
+            public IEnumerable<LocationList> GetLocation(int id)
             {
                 using (var ctx = new ApplicationDbContext())
                 {
                     var query =
                         ctx
                             .Locations
-
+                            .Where(e => e.LocationID == id)
                             .Select(
                                 e =>
                                     new LocationList
