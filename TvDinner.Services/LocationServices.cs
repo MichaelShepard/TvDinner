@@ -60,6 +60,60 @@ namespace TvDinner.Services
                     return query.ToArray();
                 }
             }
+
+        public LocationDetail GetLocationById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Locations
+                        .Single(e => e.LocationID == id);
+                return
+                    new LocationDetail
+                    {
+                        LocationID = entity.LocationID,
+                        Continent = entity.Continent,
+                        Country = entity.Country,
+                        State_Territory = entity.State_Territory,
+                        City = entity.City
+                    };
+            }
         }
+
+        public bool UpdateLocation(LocationEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Locations
+                        .Single(e => e.LocationID == model.LocationID);
+
+                entity.Continent = model.Continent;
+                entity.Country = model.Country;
+                entity.State_Territory = model.State_Territory;
+                entity.City = model.City;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteLocation(int locationID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Locations
+                        .Single(e => e.LocationID == locationID);
+
+                ctx.Locations.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
+}
 

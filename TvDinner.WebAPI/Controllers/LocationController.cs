@@ -38,5 +38,35 @@ namespace TvDinner.WebAPI.Controllers
             var locations = locationService.GetLocation();
             return Ok(locations);
         }
+
+        public IHttpActionResult Get(int id)
+        {
+            LocationService locationService = CreateLocationService();
+            var location = locationService.GetLocationById(id);
+            return Ok(location);
+        }
+
+        public IHttpActionResult Put(LocationEdit location)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateLocationService();
+
+            if (!service.UpdateLocation(location))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateLocationService();
+
+            if (!service.DeleteLocation(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }
