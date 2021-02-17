@@ -5,19 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TvDinner.Data
+namespace TvDinner.Models
 {
-    public class Recipe
+    public class RecipeCreate
     {
-        [Key]
-        public int RecipeId { get; set; }
         [Required]
         public string RecipeName { get; set; }
         [Required]
         public List<string> RecipeIngredients { get; set; }
         [Required]
         public List<string> Instructions { get; set; }
+
         public int Servings { get; set; }
-        public int CaloriesPerServing { get; set; }
+
+        public int Calories { get; set; }
     }
 }
