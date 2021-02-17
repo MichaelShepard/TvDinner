@@ -86,11 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-<<<<<<< HEAD
     <Compile Include="Media.cs" />
-=======
     <Compile Include="Location.cs" />
->>>>>>> develop
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
