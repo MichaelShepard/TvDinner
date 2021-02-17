@@ -54,11 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD:TvDinner.Services/TvDinner.Services.csproj
     <Compile Include="MediaService.cs" />
-=======
     <Compile Include="LocationServices.cs" />
->>>>>>> develop:TvDinner.Services/TvDinner.Service.csproj
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
