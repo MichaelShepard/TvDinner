@@ -26,7 +26,7 @@ namespace TvDinner.Data
 
     public enum MediaType
     {
-        Movie =1 ,
+        Movie = 1 ,
         Tv
     }
 

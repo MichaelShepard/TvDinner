@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TvDinner.Data;
 
 namespace TvDinner.Models
 {
@@ -13,9 +14,9 @@ namespace TvDinner.Models
 
         public string Title { get; set; }
 
-        public Enum Genre { get; set; }
+        public Genre Genre { get; set; }
 
-        public Enum MediaType { get; set; }
+        public MediaType MediaType { get; set; }
 
         public string SeasonEpisode { get; set; }
 

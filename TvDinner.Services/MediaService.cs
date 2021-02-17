@@ -23,8 +23,8 @@ namespace TvDinner.Services
             var entity = new Media()
             {
                 Title = model.Title,
-                Genre = (Genre)model.Genre,
-                MediaType = (MediaType)model.MediaType,
+                Genre = model.Genre,
+                MediaType = model.MediaType,
                 SeasonEpisode = model.SeasonEpisode,
                 SceneOfFood = model.SceneOfFood,
                 CreatedUtc = DateTimeOffset.Now
@@ -43,7 +43,7 @@ namespace TvDinner.Services
             {
                 var query = ctx
                     .Media
-                    // .Where(e => e.MediaId == _mediaId) REmove this to get all notes
+                    // .Where(e => e.MediaId == _mediaId) REmove this to get all media
                     .Select(e => new MediaDetails
                     {
                         MediaId = e.MediaId,
