@@ -54,16 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="MediaCreate.cs" />
     <Compile Include="MediaDetails.cs" />
     <Compile Include="MediaEdit.cs" />
-=======
     <Compile Include="LocationCreate.cs" />
     <Compile Include="LocationDetail.cs" />
     <Compile Include="LocationEdit.cs" />
     <Compile Include="LocationList.cs" />
->>>>>>> develop
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
