@@ -22,6 +22,8 @@ namespace TvDinner.Models
 
         public string SceneOfFood { get; set; }
 
+        public DateTimeOffset CreatedUtc { get; set; }
+
 
     }
 }
