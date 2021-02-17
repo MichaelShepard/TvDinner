@@ -37,26 +37,26 @@ namespace TvDinner.Services
             }
         }
 
-        //public IEnumerable<MediaDetails> GetMedia()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query = ctx
-        //            .Media
-        //            .Where(e => e.MediaId == _mediaId)
-        //            .Select(e => new MediaDetails
-        //            {
-        //                MediaId = e.MediaId,
-        //                Title = e.Title,
-        //                Genre = e.Genre,
-        //                MediaType = e.MediaType,
-        //                SeasonEpisode = e.SeasonEpisode,
-        //                SceneOfFood = e.SceneOfFood,
-        //                CreatedUtc = e.CreatedUtc
-        //            });
-        //        return query.ToArray();
-        //    }
-        //}
+        public IEnumerable<MediaDetails> GetMedia()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+                    .Media
+                    // .Where(e => e.MediaId == _mediaId) REmove this to get all notes
+                    .Select(e => new MediaDetails
+                    {
+                        MediaId = e.MediaId,
+                        Title = e.Title,
+                        Genre = e.Genre,
+                        MediaType = e.MediaType,
+                        SeasonEpisode = e.SeasonEpisode,
+                        SceneOfFood = e.SceneOfFood,
+                        CreatedUtc = e.CreatedUtc
+                    });
+                return query.ToArray();
+            }
+        }
 
         public MediaDetails GetMediaById(int id)
         {

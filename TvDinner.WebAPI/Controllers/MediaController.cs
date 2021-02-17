@@ -24,6 +24,13 @@ namespace TvDinner.WebAPI.Controllers
         }
 
 
+        public IHttpActionResult Get()
+        {
+            MediaService mediaService = CreateMediaService();
+            var media = mediaService.GetMedia();
+            return Ok(media);
+        }
+
         public IHttpActionResult Get(int id)
         {
             MediaService mediaService = CreateMediaService();
