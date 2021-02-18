@@ -44,7 +44,6 @@ namespace TvDinner.Services
                     var query =
                         ctx
                             .Locations
-                            
                             .Select(
                                 e =>
                                     new LocationList
