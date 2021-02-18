@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvDinner.WebAPI", "TvDinner
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvDinner.Data", "TvDinner.Data\TvDinner.Data.csproj", "{F71E184B-405C-410C-AE8E-B5014E5B26EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvDinner.Services", "TvDinner.Services\TvDinner.Services.csproj", "{81B697F2-180A-45FC-B954-BC22BFD73565}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvDinner.Service", "TvDinner.Services\TvDinner.Service.csproj", "{81B697F2-180A-45FC-B954-BC22BFD73565}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvDinner.Models", "TvDinner.Models\TvDinner.Models.csproj", "{E205D5B9-EF9B-45D7-9C8F-238E3B819BF9}"
 EndProject

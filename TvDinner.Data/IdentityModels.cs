@@ -36,7 +36,7 @@ namespace TvDinner.Data // Changed namespace
 
         public DbSet<Media> Media { get; set; } // NEED TO ADD THIS WHEN WE SETUP DATABASE
         public DbSet<Location> Locations { get; set; } // NEED TO ADD THIS WHEN WE SETUP DATABASE
-        public DbSet<Recipe> Recipes { get; set; } // NEED TO ADD THIS WHEN WE SETUP DATABASE
+        //public DbSet<Recipe> Recipes { get; set; } // NEED TO ADD THIS WHEN WE SETUP DATABASE
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) // Added
