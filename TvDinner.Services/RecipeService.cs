@@ -40,7 +40,18 @@ namespace TvDinner.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-
+                    ctx
+                    .Recipes
+                    .Single(e => e.RecipeId == id);
+                return
+                 new RecipeDetail
+                 {
+                     RecipeId = entity.RecipeId,
+                     RecipeName = entity.RecipeName,
+                     RecipeIngredients = entity.RecipeIngredients,
+                     Servings = entity.Servings,
+                     CaloriesPerServing = entity.CaloriesPerServing
+                 };
             }
         }
 

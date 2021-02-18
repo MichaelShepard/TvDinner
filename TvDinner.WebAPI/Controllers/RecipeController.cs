@@ -14,10 +14,10 @@ namespace TvDinner.WebAPI.Controllers
     [Authorize]
     public class RecipeController : ApiController
     {
-       public IHttpActionResult Get()
+       public IHttpActionResult Get(int id)
         {
             RecipeService recipeService = CreateRecipeService();
-            var recipes = recipeService.GetRecipe();
+            var recipes = recipeService.GetRecipe(id);
             return Ok(recipes);
         }
 
