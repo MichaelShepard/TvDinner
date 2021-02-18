@@ -32,13 +32,6 @@ namespace TvDinner.WebAPI.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Get()
-        {
-            LocationService locationService = CreateLocationService();
-            var locations = locationService.GetLocation();
-            return Ok(locations);
-        }
-
         public IHttpActionResult Get(int id)
         {
             LocationService locationService = CreateLocationService();
@@ -46,7 +39,7 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(location);
         }
 
-        public IHttpActionResult Put(LocationEdit location)
+            public IHttpActionResult Put(LocationEdit location)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

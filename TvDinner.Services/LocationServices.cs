@@ -80,6 +80,7 @@ namespace TvDinner.Services
             }
         }
 
+
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())
