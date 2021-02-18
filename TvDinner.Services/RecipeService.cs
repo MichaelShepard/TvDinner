@@ -10,10 +10,10 @@ namespace TvDinner.Services
 {
     public class RecipeService
     {
-        private readonly int _recipeId;
-        public RecipeService(int recipeId)
+        private readonly Guid _userId;
+        public RecipeService(Guid userId)
         {
-            _recipeId = recipeId;
+            _userId = userId;
         }
 
         public bool CreateRecipe(RecipeCreate model)
@@ -35,25 +35,34 @@ namespace TvDinner.Services
             }
         }
 
-        public IEnumerable<RecipeListItem> GetRecipe()
+        public RecipeDetail GetRecipe(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                //var recipe = ctx.Recipes.Find()
-                var query =
-                    ctx
-                    .Recipes
-                    .Where(e => e.RecipeId == _recipeId)
-                    .Select(
-                        e =>
-                        new RecipeListItem
-                        {
-                            RecipeId = e.RecipeId,
-                            RecipeName = e.RecipeName,
-                        }
-            );
-                return query.ToArray();
+                var entity =
+
             }
         }
+
+        //public IEnumerable<RecipeListItem> GetRecipe()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        //var recipe = ctx.Recipes.Find()
+        //        var query =
+        //            ctx
+        //            .Recipes
+        //            .Where(e => e.RecipeId == _recipeId)
+        //            .Select(
+        //                e =>
+        //                new RecipeListItem
+        //                {
+        //                    RecipeId = e.RecipeId,
+        //                    RecipeName = e.RecipeName,
+        //                }
+        //    );
+        //        return query.ToArray();
+        //    }
+        //}
     }
 }
