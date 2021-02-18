@@ -61,7 +61,10 @@
     <Compile Include="LocationDetail.cs" />
     <Compile Include="LocationEdit.cs" />
     <Compile Include="LocationList.cs" />
+    <Compile Include="RecipeCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipeDetail.cs" />
+    <Compile Include="RecipeListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
