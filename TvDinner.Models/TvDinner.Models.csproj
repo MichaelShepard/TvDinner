@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MediaCreate.cs" />
+    <Compile Include="MediaDetails.cs" />
+    <Compile Include="MediaEdit.cs" />
     <Compile Include="LocationCreate.cs" />
     <Compile Include="LocationDetail.cs" />
     <Compile Include="LocationEdit.cs" />
@@ -63,6 +66,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TvDinner.Data\TvDinner.Data.csproj">
+      <Project>{f71e184b-405c-410c-ae8e-b5014e5b26eb}</Project>
+      <Name>TvDinner.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
