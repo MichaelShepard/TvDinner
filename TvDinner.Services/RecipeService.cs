@@ -55,6 +55,23 @@ namespace TvDinner.Services
             }
         }
 
+        public bool UpdateRecipe(RecipeEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Recipes
+                    .Single(e => e.RecipeId == model.RecipeId);
+
+                entity.RecipeName = model.RecipeName;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
+
         //public IEnumerable<RecipeListItem> GetRecipe()
         //{
         //    using (var ctx = new ApplicationDbContext())

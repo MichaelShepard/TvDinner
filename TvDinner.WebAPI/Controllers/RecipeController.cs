@@ -40,5 +40,18 @@ namespace TvDinner.WebAPI.Controllers
             var recipeService = new RecipeService(userId);
             return recipeService;
         }
+
+        public IHttpActionResult Put(RecipeEdit recipe)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateRecipeService();
+
+            if (!service.UpdateRecipe(recipe))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }
