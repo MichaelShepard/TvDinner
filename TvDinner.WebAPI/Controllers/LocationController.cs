@@ -39,7 +39,7 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(location);
         }
 
-            public IHttpActionResult Put(LocationEdit location)
+        public IHttpActionResult Put(LocationEdit location)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
