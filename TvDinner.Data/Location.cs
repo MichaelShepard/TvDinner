@@ -20,5 +20,8 @@ namespace TvDinner.Data
         public string State_Territory { get; set; }
         [Required]
         public string City { get; set; }
+
+        public virtual ICollection<Media> Medias { get; set; }  // Foreign Key
+
     } 
 }

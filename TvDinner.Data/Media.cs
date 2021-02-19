@@ -59,16 +59,16 @@ namespace TvDinner.Data
         // Foreign Keys
 
         // [ForeignKey(nameof(Recipe))]
-        public int RecipeId { get; set; }
+        // public int RecipeId { get; set; }
 
         // public virtual Recipe Recipe { get; set; }
 
-        // [ForeignKey(nameof(Location))]
+        [ForeignKey(nameof(Location))]
         public int LocationId { get; set; }
-        // public virtual Location Location { get; set; }
+        public virtual Location Location { get; set; }
+
 
         
-
 
     }
 }
