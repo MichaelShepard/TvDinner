@@ -58,7 +58,7 @@ namespace TvDinner.Services
 
         public bool UpdateRecipe(RecipeEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
@@ -76,7 +76,20 @@ namespace TvDinner.Services
             }
         }
 
+        public bool DeleteRecipe(int recipeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Recipes
+                        .Single(e => e.RecipeId == recipeId);
 
+                ctx.Recipes.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
         //public IEnumerable<RecipeListItem> GetRecipe()
         //{
