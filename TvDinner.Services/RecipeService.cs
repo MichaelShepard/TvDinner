@@ -49,6 +49,7 @@ namespace TvDinner.Services
                      RecipeId = entity.RecipeId,
                      RecipeName = entity.RecipeName,
                      RecipeIngredients = entity.RecipeIngredients,
+                     Instructions = entity.Instructions,
                      Servings = entity.Servings,
                      CaloriesPerServing = entity.CaloriesPerServing
                  };
@@ -64,7 +65,12 @@ namespace TvDinner.Services
                     .Recipes
                     .Single(e => e.RecipeId == model.RecipeId);
 
+                entity.RecipeId = model.RecipeId;
                 entity.RecipeName = model.RecipeName;
+                entity.RecipeIngredients = model.RecipeIngredients;
+                entity.Instructions = model.Instructions;
+                entity.Servings = model.Servings;
+                entity.CaloriesPerServing = model.CaloriesPerServing;
 
                 return ctx.SaveChanges() == 1;
             }

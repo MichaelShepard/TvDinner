@@ -12,9 +12,9 @@ namespace TvDinner.Models
         [Required]
         public string RecipeName { get; set; }
         [Required]
-        public List<string> RecipeIngredients { get; set; }
+        public string RecipeIngredients { get; set; }
         [Required]
-        public List<string> Instructions { get; set; }
+        public string Instructions { get; set; }
 
         public int Servings { get; set; }
 

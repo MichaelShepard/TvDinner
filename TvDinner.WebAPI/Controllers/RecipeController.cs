@@ -53,5 +53,15 @@ namespace TvDinner.WebAPI.Controllers
 
             return Ok();
         }
+
+        //public IHttpActionResult Delete(int id)
+        //{
+        //    var service = CreateRecipeService();
+
+        //    if (!service.DeleteRecipe(id))
+        //        return InternalServerError();
+
+        //    return Ok();
+        //}
     }
 }

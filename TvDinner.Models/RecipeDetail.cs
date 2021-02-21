@@ -10,8 +10,8 @@ namespace TvDinner.Models
     {
         public int RecipeId { get; set; }
         public string RecipeName { get; set; }
-        public List<string> RecipeIngredients { get; set; }
-        public List<string> Instructions { get; set; }
+        public string RecipeIngredients { get; set; }
+        public string Instructions { get; set; }
         public int Servings { get; set; }
         public int CaloriesPerServing { get; set; }
     }
