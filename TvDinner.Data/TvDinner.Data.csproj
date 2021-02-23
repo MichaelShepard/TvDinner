@@ -91,6 +91,7 @@
     <Compile Include="Migrations\202102200351291_ThirdMigration.cs" />
     <Compile Include="Migrations\202102200351291_ThirdMigration.Designer.cs">
       <DependentUpon>202102200351291_ThirdMigration.cs</DependentUpon>
+      </Compile>
     <Compile Include="Migrations\202102170120414_InitialCreate.cs" />
     <Compile Include="Migrations\202102170120414_InitialCreate.Designer.cs">
       <DependentUpon>202102170120414_InitialCreate.cs</DependentUpon>
@@ -122,6 +123,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202102200351291_ThirdMigration.resx">
       <DependentUpon>202102200351291_ThirdMigration.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102170120414_InitialCreate.resx">
       <DependentUpon>202102170120414_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
