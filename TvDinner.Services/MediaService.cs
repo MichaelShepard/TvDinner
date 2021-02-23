@@ -27,6 +27,7 @@ namespace TvDinner.Services
                 MediaType = model.MediaType,
                 SeasonEpisode = model.SeasonEpisode,
                 SceneOfFood = model.SceneOfFood,
+                LocationId = model.LocationId,
                 CreatedUtc = DateTimeOffset.Now
             };
 
