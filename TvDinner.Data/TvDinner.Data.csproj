@@ -88,29 +88,9 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Migrations\202102200351291_ThirdMigration.cs" />
-    <Compile Include="Migrations\202102200351291_ThirdMigration.Designer.cs">
-      <DependentUpon>202102200351291_ThirdMigration.cs</DependentUpon>
-      </Compile>
-    <Compile Include="Migrations\202102170120414_InitialCreate.cs" />
-    <Compile Include="Migrations\202102170120414_InitialCreate.Designer.cs">
-      <DependentUpon>202102170120414_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102190047320_Location.cs" />
-    <Compile Include="Migrations\202102190047320_Location.Designer.cs">
-      <DependentUpon>202102190047320_Location.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102190048511_Updated FK Location ID.cs" />
-    <Compile Include="Migrations\202102190048511_Updated FK Location ID.Designer.cs">
-      <DependentUpon>202102190048511_Updated FK Location ID.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102190155585_LocationMedia FK.cs" />
-    <Compile Include="Migrations\202102190155585_LocationMedia FK.Designer.cs">
-      <DependentUpon>202102190155585_LocationMedia FK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102190204591_Locatio FK.cs" />
-    <Compile Include="Migrations\202102190204591_Locatio FK.Designer.cs">
-      <DependentUpon>202102190204591_Locatio FK.cs</DependentUpon>
+    <Compile Include="Migrations\202102240204144_Recipe.cs" />
+    <Compile Include="Migrations\202102240204144_Recipe.Designer.cs">
+      <DependentUpon>202102240204144_Recipe.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,23 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202102200351291_ThirdMigration.resx">
-      <DependentUpon>202102200351291_ThirdMigration.cs</DependentUpon>
-      </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102170120414_InitialCreate.resx">
-      <DependentUpon>202102170120414_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102190047320_Location.resx">
-      <DependentUpon>202102190047320_Location.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102190048511_Updated FK Location ID.resx">
-      <DependentUpon>202102190048511_Updated FK Location ID.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102190155585_LocationMedia FK.resx">
-      <DependentUpon>202102190155585_LocationMedia FK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102190204591_Locatio FK.resx">
-      <DependentUpon>202102190204591_Locatio FK.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102240204144_Recipe.resx">
+      <DependentUpon>202102240204144_Recipe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

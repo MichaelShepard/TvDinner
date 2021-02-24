@@ -14,6 +14,8 @@ namespace TvDinner.WebAPI.Controllers
     [Authorize]
     public class MediaController : ApiController
     {
+        
+
 
         private MediaService CreateMediaService()
         {
@@ -36,6 +38,13 @@ namespace TvDinner.WebAPI.Controllers
             MediaService mediaService = CreateMediaService();
             var media = mediaService.GetMediaById(id);
             return Ok(media);
+        }
+
+        public IHttpActionResult GetMediaByLocation(string mediaTitle)
+        {
+            MediaService mediaService = CreateMediaService();
+            var mediaLocation = mediaService.GetLocationByMediaTitle(mediaTitle);
+            return Ok(mediaLocation);
         }
 
 

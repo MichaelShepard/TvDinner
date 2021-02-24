@@ -7,13 +7,13 @@ namespace TvDinner.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Location : IMigrationMetadata
+    public sealed partial class Recipe : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Location));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Recipe));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102190047320_Location"; }
+            get { return "202102240204144_Recipe"; }
         }
         
         string IMigrationMetadata.Source

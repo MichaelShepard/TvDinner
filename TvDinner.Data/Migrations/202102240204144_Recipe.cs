@@ -3,10 +3,22 @@ namespace TvDinner.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Recipe : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Location",
+                c => new
+                    {
+                        LocationID = c.Int(nullable: false, identity: true),
+                        Continent = c.String(nullable: false),
+                        Country = c.String(nullable: false),
+                        State_Territory = c.String(nullable: false),
+                        City = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.LocationID);
+            
             CreateTable(
                 "dbo.Media",
                 c => new
@@ -19,10 +31,24 @@ namespace TvDinner.Data.Migrations
                         SceneOfFood = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
-                        RecipeId = c.Int(nullable: false),
                         LocationId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.MediaId);
+                .PrimaryKey(t => t.MediaId)
+                .ForeignKey("dbo.Location", t => t.LocationId, cascadeDelete: true)
+                .Index(t => t.LocationId);
+            
+            CreateTable(
+                "dbo.Recipe",
+                c => new
+                    {
+                        RecipeId = c.Int(nullable: false, identity: true),
+                        RecipeName = c.String(nullable: false),
+                        RecipeIngredients = c.String(nullable: false),
+                        Instructions = c.String(nullable: false),
+                        Servings = c.Int(nullable: false),
+                        CaloriesPerServing = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.RecipeId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -102,16 +128,20 @@ namespace TvDinner.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Media", "LocationId", "dbo.Location");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Media", new[] { "LocationId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Recipe");
             DropTable("dbo.Media");
+            DropTable("dbo.Location");
         }
     }
 }
