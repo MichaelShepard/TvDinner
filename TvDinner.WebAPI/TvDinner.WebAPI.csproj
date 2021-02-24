@@ -326,6 +326,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TvDinner.Data\TvDinner.Data.csproj">
+      <Project>{F71E184B-405C-410C-AE8E-B5014E5B26EB}</Project>
+      <Name>TvDinner.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TvDinner.Models\TvDinner.Models.csproj">
       <Project>{e205d5b9-ef9b-45d7-9c8f-238e3b819bf9}</Project>
       <Name>TvDinner.Models</Name>

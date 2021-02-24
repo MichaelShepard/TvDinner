@@ -57,6 +57,26 @@ namespace TvDinner.Services
             }
         }
 
+        public LocationDetail GetLocationByCountry(string country)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Locations
+                        .Single(e => e.Country == country);
+                return
+                    new LocationDetail
+                    {
+                        LocationID = entity.LocationID,
+                        Continent = entity.Continent,
+                        Country = entity.Country,
+                        State_Territory = entity.State_Territory,
+                        City = entity.City
+                    };
+            }
+        }
+
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())
