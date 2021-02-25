@@ -88,7 +88,6 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="Location.cs" />
-
     <Compile Include="Migrations\202102200351291_ThirdMigration.cs" />
     <Compile Include="Migrations\202102200351291_ThirdMigration.Designer.cs">
       <DependentUpon>202102200351291_ThirdMigration.cs</DependentUpon>
@@ -126,7 +125,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-
     <EmbeddedResource Include="Migrations\202102200351291_ThirdMigration.resx">
       <DependentUpon>202102200351291_ThirdMigration.cs</DependentUpon>
       </EmbeddedResource>
@@ -147,8 +145,7 @@
 </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102162356230_InitialCreate.resx">
       <DependentUpon>202102162356230_InitialCreate.cs</DependentUpon>
-
-    </EmbeddedResource>
+   </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
