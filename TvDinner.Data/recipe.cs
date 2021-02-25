@@ -19,5 +19,6 @@ namespace TvDinner.Data
         public string Instructions { get; set; }
         public int Servings { get; set; }
         public int CaloriesPerServing { get; set; }
+        public virtual ICollection<Media> Medias { get; set; }
     }
 }
