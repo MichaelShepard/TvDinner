@@ -32,20 +32,27 @@ namespace TvDinner.WebAPI.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Get()
-        {
-            LocationService locationService = CreateLocationService();
-            var locations = locationService.GetLocation();
-            return Ok(locations);
-        }
-
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult GetByID(int id)
         {
             LocationService locationService = CreateLocationService();
             var location = locationService.GetLocationById(id);
             return Ok(location);
         }
 
+        
+        public IHttpActionResult  GetByCountry(string country)
+        {
+            LocationService locationService = CreateLocationService();
+            var location = locationService.GetLocationByCountry(country);
+            return Ok(location);
+        }
+
+        public IHttpActionResult GetLocation()
+        {
+            LocationService locationService = CreateLocationService();
+            var location = locationService.GetLocation();
+            return Ok(location);
+        }
         public IHttpActionResult Put(LocationEdit location)
         {
             if (!ModelState.IsValid)
