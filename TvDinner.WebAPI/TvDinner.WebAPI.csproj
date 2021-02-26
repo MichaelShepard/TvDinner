@@ -327,7 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TvDinner.Data\TvDinner.Data.csproj">
-      <Project>{f71e184b-405c-410c-ae8e-b5014e5b26eb}</Project>
+      <Project>{F71E184B-405C-410C-AE8E-B5014E5B26EB}</Project>
       <Name>TvDinner.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\TvDinner.Models\TvDinner.Models.csproj">
