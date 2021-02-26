@@ -40,7 +40,7 @@ namespace TvDinner.WebAPI.Controllers
         }
 
         
-        public IHttpActionResult  GetByCountry(string country)
+        public IHttpActionResult GetByCountry(string country)
         {
             LocationService locationService = CreateLocationService();
             var location = locationService.GetLocationByCountry(country);

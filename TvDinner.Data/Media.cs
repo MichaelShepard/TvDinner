@@ -68,7 +68,7 @@ namespace TvDinner.Data
         public virtual Location Location { get; set; }
 
 
-        
+        public virtual ICollection<Location> Locations { get; set; }
 
     }
 }
