@@ -57,25 +57,54 @@ namespace TvDinner.Services
             }
         }
 
-        public LocationDetail GetLocationByCountry(string country)
+        public IEnumerable<LocationList> GetLocation()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Locations
-                        .Single(e => e.Country == country);
-                return
-                    new LocationDetail
-                    {
-                        LocationID = entity.LocationID,
-                        Continent = entity.Continent,
-                        Country = entity.Country,
-                        State_Territory = entity.State_Territory,
-                        City = entity.City
-                    };
+
+                        .Select(
+                            e =>
+                                new LocationList
+                                {
+                                    LocationID = e.LocationID,
+                                    Continent = e.Continent,
+                                    Country = e.Country,
+                                    State_Territory = e.State_Territory,
+                                    City = e.City
+
+                                }
+                        );
+
+                return query.ToArray();
             }
         }
+
+        public IEnumerable<LocationDetail> GetLocationByCountry(string country)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Locations
+                    .Where(e => e.Country == country)
+                    .Select(
+                        e =>
+                        new LocationDetail
+                        {
+                            LocationID = e.LocationID,
+                            Country = e.Country,
+                            State_Territory = e.State_Territory,
+                            City = e.City
+                        }
+                        ); 
+
+                return query.ToArray();
+            }
+        }
+
 
         public bool UpdateLocation(LocationEdit model)
         {
