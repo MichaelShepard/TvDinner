@@ -80,7 +80,36 @@ namespace TvDinner.Services
             }
         }
 
-        public bool UpdateMedia(MediaEdit model)
+
+        public IEnumerable<MediaLocation> GetLocationByMediaTitle(string mediaTitle)
+        {
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+
+                    .Media
+                    .Where(e => e.Title == mediaTitle)
+                    .Select(e => new MediaLocation
+                    
+                    {
+                        Title = e.Title,
+                        SeasonEpisode = e.SeasonEpisode,
+                        SceneOfFood = e.SceneOfFood,
+                        Continent = e.Location.Continent,
+                        Country = e.Location.Country,
+                        State_Territory = e.Location.State_Territory,
+                        City = e.Location.City
+                       
+                    } );
+                    
+                return query.ToArray();
+            }
+        }
+
+        
+
+                public bool UpdateMedia(MediaEdit model)
         {
 
             using (var ctx = new ApplicationDbContext())
