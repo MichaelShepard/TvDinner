@@ -55,16 +55,15 @@ namespace TvDinner.Data
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-
         // Foreign Keys
 
         [ForeignKey(nameof(Location))]
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
 
-        [ForeignKey(nameof(Recipe))]
-        public int RecipeId { get; set; }
-        public virtual Recipe Recipe { get; set; }
+        //Navigational Property 
+
+        public virtual ICollection<Recipe> Recipes { get; set; }
 
     }
 }

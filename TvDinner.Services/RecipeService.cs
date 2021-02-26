@@ -26,6 +26,7 @@ namespace TvDinner.Services
                     CaloriesPerServing = model.Calories,
                     Servings = model.Servings,
                     Instructions = model.Instructions,
+                    MediaId = model.MediaId
                 };
 
             using (var ctx = new ApplicationDbContext())
