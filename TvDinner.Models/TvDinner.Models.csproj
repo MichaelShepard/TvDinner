@@ -62,6 +62,7 @@
     <Compile Include="LocationEdit.cs" />
     <Compile Include="LocationList.cs" />
     <Compile Include="MediaLocation.cs" />
+    <Compile Include="MediaLocationUpdate.cs" />
     <Compile Include="MediaRecipeFind.cs" />
     <Compile Include="RecipeCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
