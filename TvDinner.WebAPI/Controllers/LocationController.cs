@@ -39,13 +39,6 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(location);
         }
 
-        
-        public IHttpActionResult GetByCountry(string country)
-        {
-            LocationService locationService = CreateLocationService();
-            var location = locationService.GetLocationByCountry(country);
-            return Ok(location);
-        }
 
         public IHttpActionResult GetLocation()
         {
