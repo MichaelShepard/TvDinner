@@ -19,5 +19,7 @@ namespace TvDinner.Models
         public int Servings { get; set; }
 
         public int Calories { get; set; }
+
+        public int MediaId { get; set; }
     }
 }

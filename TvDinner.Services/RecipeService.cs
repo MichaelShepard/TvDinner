@@ -26,6 +26,7 @@ namespace TvDinner.Services
                     CaloriesPerServing = model.Calories,
                     Servings = model.Servings,
                     Instructions = model.Instructions,
+                    MediaId = model.MediaId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -55,6 +56,22 @@ namespace TvDinner.Services
                  };
             }
         }
+
+        //public RecipeIngredients GetIngredients(int id)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity =
+        //            ctx
+        //            .Recipes
+        //            .Single(e => e.RecipeId == id);
+        //        return
+        //         new RecipeIngredients
+        //         {
+        //             Ingredients = entity.RecipeIngredients
+        //         };
+        //    }
+        //}
 
         public bool UpdateRecipe(RecipeEdit model)
         {
