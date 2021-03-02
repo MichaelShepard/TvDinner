@@ -69,6 +69,7 @@
     <Compile Include="RecipeDetail.cs" />
     <Compile Include="RecipeEdit.cs" />
     <Compile Include="RecipeListItem.cs" />
+    <Compile Include="RecipeLocation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
