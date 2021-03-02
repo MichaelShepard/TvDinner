@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LocationOfMedia.cs" />
     <Compile Include="MediaCreate.cs" />
     <Compile Include="MediaDetails.cs" />
     <Compile Include="MediaEdit.cs" />
