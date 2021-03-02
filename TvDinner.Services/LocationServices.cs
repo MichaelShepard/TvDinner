@@ -57,6 +57,32 @@ namespace TvDinner.Services
             }
         }
 
+        public IEnumerable<LocationList> GetLocation()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Locations
+
+                        .Select(
+                            e =>
+                                new LocationList
+                                {
+                                    LocationID = e.LocationID,
+                                    Continent = e.Continent,
+                                    Country = e.Country,
+                                    State_Territory = e.State_Territory,
+                                    City = e.City
+
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+       
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())
