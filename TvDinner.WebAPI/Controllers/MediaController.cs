@@ -40,8 +40,8 @@ namespace TvDinner.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/Media/GetMediaByLocation")]
-        public IHttpActionResult GetMediaByLocation(string mediaTitle)
+        [Route("api/Media/GetLocationByMediaTitle")]
+        public IHttpActionResult GetLocationByMediaTitle(string mediaTitle)
         {
             MediaService mediaService = CreateMediaService();
             var mediaLocation = mediaService.GetLocationByMediaTitle(mediaTitle);
