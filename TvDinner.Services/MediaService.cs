@@ -53,6 +53,7 @@ namespace TvDinner.Services
                         MediaType = e.MediaType,
                         SeasonEpisode = e.SeasonEpisode,
                         SceneOfFood = e.SceneOfFood,
+                        LocationId = e.LocationId,
                         CreatedUtc = e.CreatedUtc
                     });
                 return query.ToArray();
@@ -107,9 +108,33 @@ namespace TvDinner.Services
             }
         }
 
-        
+        public IEnumerable<MediaDetails> GetMediaByTitle(string mediaTitle)
+        {
 
-                public bool UpdateMedia(MediaEdit model)
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+
+                    .Media
+                    .Where(e => e.Title == mediaTitle)
+                    .Select(e => new MediaDetails
+
+                    {
+                        Title = e.Title,
+                        SeasonEpisode = e.SeasonEpisode,
+                        SceneOfFood = e.SceneOfFood,
+                        Genre = e.Genre,
+                        MediaType = e.MediaType,
+                        CreatedUtc = e.CreatedUtc
+                  });
+
+                return query.ToArray();
+            }
+        }
+
+
+
+        public bool UpdateMedia(MediaEdit model)
         {
 
             using (var ctx = new ApplicationDbContext())
@@ -123,6 +148,23 @@ namespace TvDinner.Services
                 entity.MediaType = (MediaType)model.MediaType;
                 entity.SeasonEpisode = model.SeasonEpisode;
                 entity.SceneOfFood = entity.SceneOfFood;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+
+        }
+
+        public bool UpdateMediaLocation(MediaLocationUpdate model)
+        {
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Media.Single(e => e.MediaId == model.MediaId);
+
+                entity.MediaId = model.MediaId;
+                entity.LocationId = model.LocationID;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
