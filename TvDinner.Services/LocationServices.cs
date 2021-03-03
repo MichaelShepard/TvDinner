@@ -82,7 +82,34 @@ namespace TvDinner.Services
             }
         }
 
-       
+        public IEnumerable<RecipeLocation> GetRecipeByLocationCountry(string country)
+        {
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+
+                    .Locations
+                    .Where(e => e.Country == country)
+                    .Select(e => new RecipeLocation
+
+                    {
+                        Continent = e.Continent,
+                        Country = e.Country,
+                        State_Territory = e.State_Territory,
+                        City = e.City,
+                        RecipeName = e.Recipe.RecipeName,
+                        RecipeIngredients = e.Recipe.RecipeIngredients,
+                        Instructions = e.Recipe.Instructions,
+                        Servings = e.Recipe.Servings,
+                        CaloriesPerServing = e.Recipe.CaloriesPerServing
+
+
+                    });
+
+                return query.ToArray();
+            }
+        }
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())

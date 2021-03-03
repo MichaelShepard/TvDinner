@@ -50,7 +50,7 @@ namespace TvDinner.WebAPI.Controllers
         public IHttpActionResult GetRecipeByLocation(string location)
         {
             LocationService locationService = CreateLocationService();
-            var recipeLocation = locationService.GetRecipeByLocation(location);
+            var recipeLocation = locationService.GetRecipeByLocationCountry(location);
             return Ok(recipeLocation);
         }
         public IHttpActionResult Put(LocationEdit location)
