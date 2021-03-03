@@ -57,6 +57,15 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(mediaFromTitle);
         }
 
+        [HttpGet]
+        [Route("api/Media/GetReceipeByMediaTitle")]
+        public IHttpActionResult GetRecipesByMediaTitle(string mediaTitle)
+        {
+            MediaService mediaService = CreateMediaService();
+            var mediaFromTitle = mediaService.GetRecipesByMediaTitle(mediaTitle);
+            return Ok(mediaFromTitle);
+        }
+
 
         [HttpPost]
         public IHttpActionResult Post(MediaCreate media)

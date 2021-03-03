@@ -108,17 +108,15 @@ namespace TvDinner.Services
             }
         }
 
-        public IEnumerable<MediaRecipeFind> getrecipesbymediatitle(string mediaTitle)
+        public IEnumerable<MediaRecipeFind> GetRecipesByMediaTitle(string mediaTitle)
         {
 
             using (var ctx = new ApplicationDbContext())
             {
                 var query = from e in ctx.Media
 
-                    //.Media
                     .Where(e => e.Title == mediaTitle)
                     join d in ctx.Recipes on e.MediaId equals d.MediaId
-                    // .Where(e => e.Title == mediatitle)
                     select new MediaRecipeFind
 
                     {
