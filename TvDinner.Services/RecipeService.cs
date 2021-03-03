@@ -57,22 +57,6 @@ namespace TvDinner.Services
             }
         }
 
-        //public RecipeIngredients GetIngredients(int id)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var entity =
-        //            ctx
-        //            .Recipes
-        //            .Single(e => e.RecipeId == id);
-        //        return
-        //         new RecipeIngredients
-        //         {
-        //             Ingredients = entity.RecipeIngredients
-        //         };
-        //    }
-        //}
-
         public bool UpdateRecipe(RecipeEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -108,6 +92,24 @@ namespace TvDinner.Services
             }
         }
 
+        public IEnumerable<RecipeIngredients> IngredientsByRecipe(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+
+                    .Recipes
+                    .Where(e => e.RecipeId == id)
+                    .Select(e => new RecipeIngredients
+
+                    {
+                        Ingredients = e.RecipeIngredients
+                    } );
+
+                return query.ToArray();
+            }
+        }
+
         //public IEnumerable<RecipeListItem> GetRecipe()
         //{
         //    using (var ctx = new ApplicationDbContext())
@@ -126,6 +128,22 @@ namespace TvDinner.Services
         //                }
         //    );
         //        return query.ToArray();
+        //    }
+        //}
+
+        //public RecipeIngredients GetIngredients(int id)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity =
+        //            ctx
+        //            .Recipes
+        //            .Single(e => e.RecipeId == id);
+        //        return
+        //         new RecipeIngredients
+        //         {
+        //             Ingredients = entity.RecipeIngredients
+        //         };
         //    }
         //}
     }

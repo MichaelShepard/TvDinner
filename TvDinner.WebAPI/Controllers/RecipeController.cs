@@ -14,6 +14,7 @@ namespace TvDinner.WebAPI.Controllers
     [Authorize]
     public class RecipeController : ApiController
     {
+       [HttpGet]
        public IHttpActionResult Get(int id)
         {
             RecipeService recipeService = CreateRecipeService();
@@ -21,6 +22,16 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(recipes);
         }
 
+        [HttpGet]
+        [Route("api/Recipe/GetIngredientsByRecipe")]
+        public IHttpActionResult GetIngredientsByRecipe(int id)
+        {
+            RecipeService recipeService = CreateRecipeService();
+            var recipeIngredients = recipeService.IngredientsByRecipe(id);
+            return Ok(recipeIngredients);
+        }
+
+        [HttpPost]
         public IHttpActionResult Post(RecipeCreate recipe)
         {
             if (!ModelState.IsValid)
@@ -41,6 +52,7 @@ namespace TvDinner.WebAPI.Controllers
             return recipeService;
         }
 
+        [HttpPost]
         public IHttpActionResult Put(RecipeEdit recipe)
         {
             if (!ModelState.IsValid)
@@ -63,15 +75,5 @@ namespace TvDinner.WebAPI.Controllers
 
             return Ok();
         }
-
-        //public IHttpActionResult Delete(int id)
-        //{
-        //    var service = CreateRecipeService();
-
-        //    if (!service.DeleteRecipe(id))
-        //        return InternalServerError();
-
-        //    return Ok();
-        //}
     }
 }
