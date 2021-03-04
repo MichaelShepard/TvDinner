@@ -22,7 +22,7 @@ namespace TvDinner.Models
 
         public string SceneOfFood { get; set; }
 
-        public int LocationId { get; set; }
+        public int? LocationId { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
 

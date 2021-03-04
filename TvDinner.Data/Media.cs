@@ -58,14 +58,12 @@ namespace TvDinner.Data
         // Foreign Keys
 
         [ForeignKey(nameof(Location))]
-        public int LocationId { get; set; }
+        public int? LocationId { get; set; }
         public virtual Location Location { get; set; }
-
-        //Navigational Property 
 
 
         public virtual ICollection<Recipe> Recipes { get; set; }
-        public virtual ICollection<Location> Locations { get; set; }
+        // public virtual ICollection<Location> Locations { get; set; }
 
     }
 }
