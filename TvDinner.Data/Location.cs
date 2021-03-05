@@ -24,8 +24,7 @@ namespace TvDinner.Data
 
         public virtual ICollection<Media> Medias { get; set; }  // Foreign Key
 
-        [ForeignKey(nameof(Recipe))]
-        public int RecipeId { get; set; }
-        public virtual Recipe Recipe { get; set; }
+       
+        
     } 
 }
