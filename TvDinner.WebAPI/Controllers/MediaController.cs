@@ -23,6 +23,7 @@ namespace TvDinner.WebAPI.Controllers
 
         }
 
+        [HttpGet]
         public IHttpActionResult Get()
         {
             MediaService mediaService = CreateMediaService();
@@ -30,6 +31,7 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(media);
         }
 
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             MediaService mediaService = CreateMediaService();
@@ -37,13 +39,35 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(media);
         }
 
-        public IHttpActionResult GetMediaByLocation(string mediaTitle)
+        [HttpGet]
+        [Route("api/Media/GetLocationByMediaTitle")]
+        public IHttpActionResult GetLocationByMediaTitle(string mediaTitle)
         {
             MediaService mediaService = CreateMediaService();
             var mediaLocation = mediaService.GetLocationByMediaTitle(mediaTitle);
             return Ok(mediaLocation);
         }
 
+        [HttpGet]
+        [Route("api/Media/GetMediaByTitle")]
+        public IHttpActionResult GetMediaByTitle(string mediaTitle)
+        {
+            MediaService mediaService = CreateMediaService();
+            var mediaFromTitle = mediaService.GetMediaByTitle(mediaTitle);
+            return Ok(mediaFromTitle);
+        }
+
+        [HttpGet]
+        [Route("api/Media/GetReceipeByMediaTitle")]
+        public IHttpActionResult GetRecipesByMediaTitle(string mediaTitle)
+        {
+            MediaService mediaService = CreateMediaService();
+            var mediaFromTitle = mediaService.GetRecipesByMediaTitle(mediaTitle);
+            return Ok(mediaFromTitle);
+        }
+
+
+        [HttpPost]
         public IHttpActionResult Post(MediaCreate media)
         {
             if (!ModelState.IsValid)
@@ -57,7 +81,24 @@ namespace TvDinner.WebAPI.Controllers
             return Ok();
 
         }
+        
+        [HttpPut]
+        [Route("api/Media/UpdateLocationOfMedia")]
+        public IHttpActionResult PutMediaLocationUpdate(MediaLocationUpdate media)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            var service = CreateMediaService();
+
+            if (!service.UpdateMediaLocation(media))
+                return InternalServerError();
+
+            return Ok();
+
+        }
+
+        [HttpPut]
         public IHttpActionResult Put(MediaEdit media)
         {
             if (!ModelState.IsValid)
