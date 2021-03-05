@@ -46,6 +46,7 @@ namespace TvDinner.WebAPI.Controllers
             var location = locationService.GetLocation();
             return Ok(location);
         }
+
         public IHttpActionResult Put(LocationEdit location)
         {
             if (!ModelState.IsValid)

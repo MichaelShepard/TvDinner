@@ -24,5 +24,7 @@ namespace TvDinner.Data
 
         public virtual ICollection<Media> Medias { get; set; }  // Foreign Key
 
+       
+        
     } 
 }
