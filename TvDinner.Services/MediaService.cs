@@ -108,6 +108,34 @@ namespace TvDinner.Services
             }
         }
 
+        public IEnumerable<MediaRecipeFind> GetRecipesByMediaTitle(string mediaTitle)
+        {
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = from e in ctx.Media
+
+                    .Where(e => e.Title == mediaTitle)
+                    join d in ctx.Recipes on e.MediaId equals d.MediaId
+                    select new MediaRecipeFind
+
+                    {
+                        
+                        Title = d.Media.Title,
+                        SeasonEpisode = d.Media.SeasonEpisode,
+                        SceneOfFood = d.Media.SceneOfFood,
+                        RecipeName = d.RecipeName,
+                        RecipeIngredients = d.RecipeIngredients,
+                        Instructions = d.Instructions,
+                        Servings = d.Servings,
+                        CaloriesPerServing = d.CaloriesPerServing
+
+                    };
+
+                return query.ToArray();
+            }
+        }
+
         public IEnumerable<MediaDetails> GetMediaByTitle(string mediaTitle)
         {
 

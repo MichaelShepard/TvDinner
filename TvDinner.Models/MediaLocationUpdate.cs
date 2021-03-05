@@ -10,7 +10,7 @@ namespace TvDinner.Models
     {
         public int MediaId { get; set; }
 
-        public int LocationID { get; set; }
+        public int? LocationID { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 

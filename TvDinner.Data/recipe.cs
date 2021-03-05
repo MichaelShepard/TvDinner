@@ -21,8 +21,12 @@ namespace TvDinner.Data
         public int Servings { get; set; }
         public int CaloriesPerServing { get; set; }
 
+     
+        
         [ForeignKey(nameof(Media))]
         public int MediaId { get; set; }
         public virtual Media Media { get; set; }
+
+        public virtual ICollection<Location> Locations { get; set; }
     }
 }

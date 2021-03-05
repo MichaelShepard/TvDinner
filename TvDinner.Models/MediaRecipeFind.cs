@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TvDinner.Data;
 
 namespace TvDinner.Models
 {
@@ -15,8 +16,15 @@ namespace TvDinner.Models
 
         public string SceneOfFood { get; set; }
 
-        public DateTimeOffset CreatedUtc { get; set; }
+        public string RecipeName { get; set; }
+      
+        public string RecipeIngredients { get; set; }
+       
+        public string Instructions { get; set; }
 
+        public int Servings { get; set; }
+        
+        public int CaloriesPerServing { get; set; }
 
     }
 }
