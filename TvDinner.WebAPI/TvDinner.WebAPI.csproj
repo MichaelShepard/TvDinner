@@ -326,8 +326,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\TvDinner.Data\TvDinner.Data.csproj">
-      <Project>{F71E184B-405C-410C-AE8E-B5014E5B26EB}</Project>
+      <Project>{f71e184b-405c-410c-ae8e-b5014e5b26eb}</Project>
       <Name>TvDinner.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\TvDinner.Models\TvDinner.Models.csproj">
