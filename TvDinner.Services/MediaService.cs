@@ -76,6 +76,7 @@ namespace TvDinner.Services
                         MediaType = entity.MediaType,
                         SeasonEpisode = entity.SeasonEpisode,
                         SceneOfFood = entity.SceneOfFood,
+                        LocationId = entity.LocationId,
                         CreatedUtc = entity.CreatedUtc
                     };
             }
@@ -182,6 +183,31 @@ namespace TvDinner.Services
             }
 
         }
+
+
+
+        //public bool UpdateMediaByOneColumn(MediaEdit model)
+        //{
+
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity = ctx
+        //            .Media.Single(e => e.MediaId == model.MediaId);
+
+        //        if(!= MediaId)
+        //        entity.MediaId = model.MediaId;
+        //        entity.Title = model.Title;
+        //        entity.Genre = (Genre)model.Genre;
+        //        entity.MediaType = (MediaType)model.MediaType;
+        //        entity.SeasonEpisode = model.SeasonEpisode;
+        //        entity.SceneOfFood = entity.SceneOfFood;
+        //        entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+        //        return ctx.SaveChanges() == 1;
+        //    }
+
+        //}
+    
 
         public bool UpdateMediaLocation(MediaLocationUpdate model)
         {
