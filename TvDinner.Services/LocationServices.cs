@@ -56,7 +56,6 @@ namespace TvDinner.Services
                     };
             }
         }
-
         public IEnumerable<LocationList> GetLocation()
         {
             using (var ctx = new ApplicationDbContext())
@@ -81,7 +80,6 @@ namespace TvDinner.Services
                 return query.ToArray();
             }
         }
-
         public IEnumerable<LocationDetail> GetLocationByCountry(string country)
         {
 
@@ -103,8 +101,6 @@ namespace TvDinner.Services
                 return query.ToArray();
             }
         }
-
-
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -122,7 +118,6 @@ namespace TvDinner.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public bool DeleteLocation(int locationID)
         {
             using (var ctx = new ApplicationDbContext())
