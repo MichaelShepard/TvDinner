@@ -1,6 +1,6 @@
 # TvDinner - web app for food and TV
 
-![TV Dinner](https://github.com/MichaelShepard/TVDinner/Develop/TVDinnerLogo.png)
+![TVDinner](/Images/TVDinnerLogo.jpg)
 
 
 ## Table of Contents
