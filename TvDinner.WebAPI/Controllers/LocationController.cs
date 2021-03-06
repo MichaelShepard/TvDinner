@@ -44,11 +44,20 @@ namespace TvDinner.WebAPI.Controllers
         }
         [HttpGet]
         [Route("api/Location/GetLocationByCountry")]
-        public IHttpActionResult GetMediaByTitle(string country)
+        public IHttpActionResult GetLocationByCountry(string country)
         {
             LocationService locationService = CreateLocationService();
             var locationFromCountry = locationService.GetLocationByCountry(country);
             return Ok(locationFromCountry);
+        }
+
+        [HttpGet]
+        [Route("api/Location/GetLocationByContinent")]
+        public IHttpActionResult GetLocationByContinent(string continent)
+        {
+            LocationService locationService = CreateLocationService();
+            var locationFromContinent = locationService.GetLocationByContinent(continent);
+            return Ok(locationFromContinent);
         }
         public IHttpActionResult Put(LocationEdit location)
         {
