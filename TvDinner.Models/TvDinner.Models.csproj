@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RecipeIngredient.cs" />
+    <Compile Include="IngredientListItem.cs" />
     <Compile Include="RecipeIngredients.cs" />
     <Compile Include="MediaCreate.cs" />
     <Compile Include="MediaDetails.cs" />

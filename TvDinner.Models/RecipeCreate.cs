@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TvDinner.Data;
 
 namespace TvDinner.Models
 {
@@ -11,8 +12,6 @@ namespace TvDinner.Models
     {
         [Required]
         public string RecipeName { get; set; }
-        [Required]
-        public string RecipeIngredients { get; set; }
         [Required]
         public string Instructions { get; set; }
 

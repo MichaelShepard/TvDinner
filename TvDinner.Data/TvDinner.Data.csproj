@@ -86,14 +86,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Ingredient.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Migrations\202103052115078_firstMigration.cs" />
+    <Compile Include="Migrations\202103052115078_firstMigration.Designer.cs">
+      <DependentUpon>202103052115078_firstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeIngredient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103052115078_firstMigration.resx">
+      <DependentUpon>202103052115078_firstMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

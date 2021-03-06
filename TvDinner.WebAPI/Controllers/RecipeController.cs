@@ -31,6 +31,15 @@ namespace TvDinner.WebAPI.Controllers
             return Ok(recipeIngredients);
         }
 
+        //[HttpGet]
+        //[Route("api/FindRecipeByIngredients")]
+        //public IHttpActionResult GetRecipeByIngredients(string ingredient)
+        //{
+        //    RecipeService recipeService = CreateRecipeService();
+        //    var recipes = recipeService.RecipesByIngredient(ingredient);
+        //    return Ok(recipes);
+        //}
+
         [HttpPost]
         public IHttpActionResult Post(RecipeCreate recipe)
         {

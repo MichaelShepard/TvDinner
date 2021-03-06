@@ -10,12 +10,16 @@ namespace TvDinner.Data
 {
     public class Recipe
     {
+        //public Recipe()
+        //{
+        //    this.RecipeIngredients = new HashSet<Ingredient>();
+        //}
+
         [Key]
         public int RecipeId { get; set; }
         [Required]
         public string RecipeName { get; set; }
-        [Required]
-        public string RecipeIngredients { get; set; }
+        public virtual ICollection<RecipeIngredient> Ingredients { get; set; } = new List<RecipeIngredient>();
         [Required]
         public string Instructions { get; set; }
         public int Servings { get; set; }

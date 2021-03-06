@@ -35,6 +35,20 @@ namespace TvDinner.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        //public RecipeDetail RecipesByIngredients(string ingredient)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity = SearchKey.Split(' ').ToList();
+        //        ctx
+        //                .Recipes
+        //                .Single
+
+        //    }
+        //    var searchopts =
+        //    supplierListQuery = supplierListQuery
+        //        .Where(x => searchopts.Any(y => x.SupplierName.Contains(y)));
+        //}
 
         public RecipeDetail GetRecipe(int id)
         {
@@ -49,10 +63,16 @@ namespace TvDinner.Services
                  {
                      RecipeId = entity.RecipeId,
                      RecipeName = entity.RecipeName,
-                     RecipeIngredients = entity.RecipeIngredients,
                      Instructions = entity.Instructions,
                      Servings = entity.Servings,
-                     CaloriesPerServing = entity.CaloriesPerServing
+                     CaloriesPerServing = entity.CaloriesPerServing,
+                     Ingredients = entity.Ingredients.Select(q => new IngredientListItem()
+                     {
+                         IngredientId = q.Ingredient.IngredientId,
+                         IngredientName = q.Ingredient.IngredientName,
+                         UnitOfMeasure = q.Ingredient.UnitOfMeasure                       
+                     }
+                     ).ToList()
                  };
             }
         }
@@ -104,47 +124,10 @@ namespace TvDinner.Services
 
                     {
                         Ingredients = e.RecipeIngredients
-                    } );
+                    });
 
                 return query.ToArray();
             }
         }
-
-        //public IEnumerable<RecipeListItem> GetRecipe()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        //var recipe = ctx.Recipes.Find()
-        //        var query =
-        //            ctx
-        //            .Recipes
-        //            .Where(e => e.RecipeId == _recipeId)
-        //            .Select(
-        //                e =>
-        //                new RecipeListItem
-        //                {
-        //                    RecipeId = e.RecipeId,
-        //                    RecipeName = e.RecipeName,
-        //                }
-        //    );
-        //        return query.ToArray();
-        //    }
-        //}
-
-        //public RecipeIngredients GetIngredients(int id)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var entity =
-        //            ctx
-        //            .Recipes
-        //            .Single(e => e.RecipeId == id);
-        //        return
-        //         new RecipeIngredients
-        //         {
-        //             Ingredients = entity.RecipeIngredients
-        //         };
-        //    }
-        //}
     }
 }

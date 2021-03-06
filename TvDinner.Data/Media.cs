@@ -63,9 +63,7 @@ namespace TvDinner.Data
 
         //Navigational Property 
 
-
         public virtual ICollection<Recipe> Recipes { get; set; }
-        public virtual ICollection<Location> Locations { get; set; }
 
     }
 }
