@@ -7,6 +7,7 @@
 * [Introduction](#Introduction)
 * [Features](#Features)
 * [Contributors](#Contributors)
+* [Resources](#Resources)
 * [Technologies](#Technologies)
 * [Backers](#Backers)
 
