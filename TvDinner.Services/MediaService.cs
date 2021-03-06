@@ -76,7 +76,7 @@ namespace TvDinner.Services
                         MediaType = entity.MediaType,
                         SeasonEpisode = entity.SeasonEpisode,
                         SceneOfFood = entity.SceneOfFood,
-                        LocationId = e.LocationId,
+                        LocationId = entity.LocationId,
                         CreatedUtc = entity.CreatedUtc
                     };
             }
