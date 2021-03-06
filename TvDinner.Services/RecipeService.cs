@@ -22,7 +22,6 @@ namespace TvDinner.Services
                 new Recipe()
                 {
                     RecipeName = model.RecipeName,
-                    RecipeIngredients = model.RecipeIngredients,
                     CaloriesPerServing = model.Calories,
                     Servings = model.Servings,
                     Instructions = model.Instructions,
@@ -35,20 +34,6 @@ namespace TvDinner.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        //public RecipeDetail RecipesByIngredients(string ingredient)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var entity = SearchKey.Split(' ').ToList();
-        //        ctx
-        //                .Recipes
-        //                .Single
-
-        //    }
-        //    var searchopts =
-        //    supplierListQuery = supplierListQuery
-        //        .Where(x => searchopts.Any(y => x.SupplierName.Contains(y)));
-        //}
 
         public RecipeDetail GetRecipe(int id)
         {
@@ -88,7 +73,6 @@ namespace TvDinner.Services
 
                 entity.RecipeId = model.RecipeId;
                 entity.RecipeName = model.RecipeName;
-                entity.RecipeIngredients = model.RecipeIngredients;
                 entity.Instructions = model.Instructions;
                 entity.Servings = model.Servings;
                 entity.CaloriesPerServing = model.CaloriesPerServing;
@@ -112,22 +96,22 @@ namespace TvDinner.Services
             }
         }
 
-        public IEnumerable<RecipeIngredients> IngredientsByRecipe(int id)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query = ctx
+        //public IEnumerable<RecipeIngredients> IngredientsByRecipe(int id)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var query = ctx
 
-                    .Recipes
-                    .Where(e => e.RecipeId == id)
-                    .Select(e => new RecipeIngredients
+        //            .Recipes
+        //            .Where(e => e.RecipeId == id)
+        //            .Select(e => new RecipeIngredients
 
-                    {
-                        Ingredients = e.RecipeIngredients
-                    });
+        //            {
+        //                Ingredients = e.RecipeIngredients
+        //            });
 
-                return query.ToArray();
-            }
-        }
+        //        return query.ToArray();
+        //    }
+        //}
     }
 }

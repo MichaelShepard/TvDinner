@@ -57,6 +57,7 @@
     <Compile Include="MediaService.cs" />
     <Compile Include="LocationServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipeIngredientService.cs" />
     <Compile Include="RecipeService.cs" />
   </ItemGroup>
   <ItemGroup>
