@@ -50,10 +50,7 @@ namespace TvDinner.Data // Changed namespace
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
-
-
     }
-
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin> // Added
     {
         public IdentityUserLoginConfiguration()

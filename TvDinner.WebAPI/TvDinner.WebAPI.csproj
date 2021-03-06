@@ -223,6 +223,9 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MediaController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -323,6 +326,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\TvDinner.Data\TvDinner.Data.csproj">
       <Project>{f71e184b-405c-410c-ae8e-b5014e5b26eb}</Project>
       <Name>TvDinner.Data</Name>
@@ -331,9 +337,9 @@
       <Project>{e205d5b9-ef9b-45d7-9c8f-238e3b819bf9}</Project>
       <Name>TvDinner.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TvDinner.Services\TvDinner.Services.csproj">
+    <ProjectReference Include="..\TvDinner.Services\TvDinner.Service.csproj">
       <Project>{81b697f2-180a-45fc-b954-bc22bfd73565}</Project>
-      <Name>TvDinner.Services</Name>
+      <Name>TvDinner.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
