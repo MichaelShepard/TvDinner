@@ -65,5 +65,6 @@ namespace TvDinner.Data
         public virtual ICollection<Recipe> Recipes { get; set; }
         
 
+
     }
 }
