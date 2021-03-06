@@ -123,6 +123,28 @@ namespace TvDinner.Services
                 return query.ToArray();
             }
         }
+
+        public IEnumerable<LocationDetail> GetLocationByCity(string city)
+        {
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+
+                    .Locations
+                    .Where(e => e.City == city)
+                    .Select(e => new LocationDetail
+
+                    {
+                        Continent = e.Continent,
+                        Country = e.Country,
+                        State_Territory = e.State_Territory,
+                        City = e.City
+                    });
+
+                return query.ToArray();
+            }
+        }
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())

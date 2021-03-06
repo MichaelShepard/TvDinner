@@ -59,6 +59,15 @@ namespace TvDinner.WebAPI.Controllers
             var locationFromContinent = locationService.GetLocationByContinent(continent);
             return Ok(locationFromContinent);
         }
+
+        [HttpGet]
+        [Route("api/Location/GetLocationByCity")]
+        public IHttpActionResult GetLocationByCity(string city)
+        {
+            LocationService locationService = CreateLocationService();
+            var locationFromCity = locationService.GetLocationByCity(city);
+            return Ok(locationFromCity);
+        }
         public IHttpActionResult Put(LocationEdit location)
         {
             if (!ModelState.IsValid)
