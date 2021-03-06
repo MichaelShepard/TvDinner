@@ -37,7 +37,11 @@ We all love movies and we all love to eat so we decided to combine the two (kind
 * Utilized LINQ syntax for search queries
 * Visual Studio (IDE)
 
+## <a name="Resources"></a>Resources
 
+* Visual Studio - coding IDE [Download](https://visualstudio.microsoft.com/downloads/)
+* Postman - testing API points [Download](https://www.postman.com/product/workspaces/)
+* [Tek Tutorials](https://www.tektutorialshub.com/entity-framework/ef-one-to-many-relationship/)
 
 ## <a name="Backers"></a>Backers
 
