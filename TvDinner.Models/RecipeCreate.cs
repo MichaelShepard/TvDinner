@@ -10,8 +10,11 @@ namespace TvDinner.Models
     public class RecipeCreate
     {
         [Required]
+        [MaxLength(500, ErrorMessage = "There are too many characters in this field.")]
         public string RecipeName { get; set; }
         [Required]
+        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
+        [MaxLength(1000, ErrorMessage = "There are too many characters in this field.")]
         public string RecipeIngredients { get; set; }
         [Required]
         public string Instructions { get; set; }
