@@ -24,8 +24,9 @@ namespace TvDinner.Models
 
         public string SceneOfFood { get; set; }
 
-        public int? LocationId { get; set; }
-      
+        public int? LocationId { get; set; }  // The ? allows the Foreign Key to be nullable
+
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
 
