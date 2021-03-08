@@ -18,7 +18,6 @@ namespace TvDinner.WebAPI.Controllers
             var locationService = new LocationService(userId);
             return locationService;
         }
-
         public IHttpActionResult Post(LocationCreate location)
         {
             if (!ModelState.IsValid)
@@ -31,31 +30,44 @@ namespace TvDinner.WebAPI.Controllers
 
             return Ok();
         }
-
         public IHttpActionResult GetByID(int id)
         {
             LocationService locationService = CreateLocationService();
             var location = locationService.GetLocationById(id);
             return Ok(location);
         }
-
-
         public IHttpActionResult GetLocation()
         {
             LocationService locationService = CreateLocationService();
             var location = locationService.GetLocation();
             return Ok(location);
         }
-
         [HttpGet]
         [Route("api/Location/GetLocationByCountry")]
-        public IHttpActionResult GetMediaByTitle(string country)
+        public IHttpActionResult GetLocationByCountry(string country)
         {
             LocationService locationService = CreateLocationService();
             var locationFromCountry = locationService.GetLocationByCountry(country);
             return Ok(locationFromCountry);
         }
 
+        [HttpGet]
+        [Route("api/Location/GetLocationByContinent")]
+        public IHttpActionResult GetLocationByContinent(string continent)
+        {
+            LocationService locationService = CreateLocationService();
+            var locationFromContinent = locationService.GetLocationByContinent(continent);
+            return Ok(locationFromContinent);
+        }
+
+        [HttpGet]
+        [Route("api/Location/GetLocationByCity")]
+        public IHttpActionResult GetLocationByCity(string city)
+        {
+            LocationService locationService = CreateLocationService();
+            var locationFromCity = locationService.GetLocationByCity(city);
+            return Ok(locationFromCity);
+        }
         public IHttpActionResult Put(LocationEdit location)
         {
             if (!ModelState.IsValid)
@@ -68,7 +80,6 @@ namespace TvDinner.WebAPI.Controllers
 
             return Ok();
         }
-
         public IHttpActionResult Delete(int id)
         {
             var service = CreateLocationService();

@@ -6,11 +6,11 @@ using Swashbuckle.Swagger;
 using System.Collections.Generic;
 using System.Web.Http.Description;
 using System.Web.Http.Filters;
-using TvDinner.WebAPI;
+using ElevenNote.WebAPI;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace TvDinner.WebAPI
+namespace ElevenNote.WebAPI
 {
     /// <summary>
     /// Document filter for adding Authorization header in Swashbuckle / Swagger.
@@ -111,7 +111,7 @@ namespace TvDinner.WebAPI
                     // hold additional metadata for an API. Version and title are required but you can also provide
                     // additional fields by chaining methods off SingleApiVersion.
                     //
-                    c.SingleApiVersion("v1", "TvDinner.WebAPI");
+                    c.SingleApiVersion("v1", "ElevenNote.WebAPI");
 
                     // Enable adding the Authorization header to [Authorize]d endpoints.
                     c.OperationFilter(() => new AddAuthorizationHeaderParameterOperationFilter());

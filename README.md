@@ -50,7 +50,7 @@ We all love movies and we all love to eat so we decided to combine the two (kind
 
 * Open Visual Studio
 * Open a project from a repo ([Tutorial](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo-visual-studio-2019?view=vs-2019&tabs=vs168later))
-* Seed database using using the post API endpoints; start with location, followed by Recipe, and then media
+* Seed database using the post API endpoints; start with location, followed by Recipe, and then media
 * Run API in Visual Studio
 
 

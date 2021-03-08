@@ -56,7 +56,6 @@ namespace TvDinner.Services
                     };
             }
         }
-
         public IEnumerable<LocationList> GetLocation()
         {
             using (var ctx = new ApplicationDbContext())
@@ -81,7 +80,6 @@ namespace TvDinner.Services
                 return query.ToArray();
             }
         }
-
         public IEnumerable<LocationDetail> GetLocationByCountry(string country)
         {
 
@@ -104,7 +102,49 @@ namespace TvDinner.Services
             }
         }
 
+        public IEnumerable<LocationDetail> GetLocationByContinent(string continent)
+        {
 
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+
+                    .Locations
+                    .Where(e => e.Continent == continent)
+                    .Select(e => new LocationDetail
+
+                    {
+                        Continent = e.Continent,
+                        Country = e.Country,
+                        State_Territory = e.State_Territory,
+                        City = e.City
+                    });
+
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<LocationDetail> GetLocationByCity(string city)
+        {
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+
+                    .Locations
+                    .Where(e => e.City == city)
+                    .Select(e => new LocationDetail
+
+                    {
+                        Continent = e.Continent,
+                        Country = e.Country,
+                        State_Territory = e.State_Territory,
+                        City = e.City
+                    });
+
+                return query.ToArray();
+            }
+        }
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -122,7 +162,6 @@ namespace TvDinner.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public bool DeleteLocation(int locationID)
         {
             using (var ctx = new ApplicationDbContext())

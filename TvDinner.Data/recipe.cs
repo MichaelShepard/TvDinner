@@ -28,5 +28,7 @@ namespace TvDinner.Data
         public virtual Media Media { get; set; }
 
         public virtual ICollection<Location> Locations { get; set; }
+
+
     }
 }
